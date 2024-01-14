@@ -84,11 +84,11 @@ section {
 
 .section--container h1 {
   font-weight: 900;
-  font-size: 16vw;
+  font-size: 13vw;
   letter-spacing: -6px;
   font-style: italic;
   width: 30%;
-  line-height: 15vh;
+  line-height: 20vh;
   font-family: 'Nunito Sans', sans-serif;
 }
 

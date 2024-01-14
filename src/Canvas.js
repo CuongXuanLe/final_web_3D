@@ -127,7 +127,7 @@ function CameraRig({ children }) {
 }
 
 useGLTF.preload("/shirt_starter_test.glb");
-['/react.png', '/three2.png', '/pmndrs.png'].forEach(useTexture.preload)
+['/logo192.png', '/three2.png', '/pmndrs.png'].forEach(useTexture.preload)
 
 
 
