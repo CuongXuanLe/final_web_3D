@@ -1,14 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import {App as Canvas} from './Canvas';
-import Overlay from './Overlay';
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import { App as Canvas } from './Canvas'
+import Overlay from './Overlay'
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
+createRoot(document.getElementById('root')).render(
+  <>
     <Canvas />
     <Overlay />
-  </React.StrictMode>
-);
+  </>
+)
 
