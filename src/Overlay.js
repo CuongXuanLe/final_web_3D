@@ -1,13 +1,15 @@
-import { Logo } from '@pmndrs/branding'
 import {
   AiOutlineHighlight,
-  AiOutlineShopping,
   AiFillCamera,
   AiOutlineArrowLeft
 } from 'react-icons/ai'
+import {
+  FaReact 
+} from 'react-icons/fa'
 import { useSnapshot } from 'valtio'
 import { state } from './store'
 import { motion, AnimatePresence } from 'framer-motion'
+import { SketchPicker } from 'react-color'
 
 export default function Overlay() {
   const snap = useSnapshot(state)
@@ -26,10 +28,12 @@ export default function Overlay() {
         initial={{ opacity: 0, y: -120 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ type: 'spring', duration: 1.8, delay: 1 }}>
-        <Logo width="40" height="40" />
-        <div>
-          <AiOutlineShopping size="3em" />
+        <div className="turn-around">
+            <FaReact size="3em" />
         </div>
+        {/* <div>
+          <AiOutlineShopping size="3em" />
+        </div> */}
       </motion.header>
 
       <AnimatePresence>
@@ -47,7 +51,7 @@ function Intro({ config }) {
   return (
     <motion.section {...config}>
       <div className="section--container">
-        <div>
+        <div className="text--gradient">
           <h1>LET'S DO IT.</h1>
         </div>
         <div className="support--content">
@@ -60,7 +64,7 @@ function Intro({ config }) {
             <button
               style={{ background: 'black' }}
               onClick={() => (state.intro = false)}>
-              CUSTOMIZE IT <AiOutlineHighlight size="1.3em" />
+              GO TO CUSTOMIZE IT <AiOutlineHighlight size="1.3em" />
             </button>
           </div>
         </div>
@@ -76,17 +80,22 @@ function Customizer({ config }) {
     <motion.section {...config}>
       <div className="customizer">
         <div className="color-options">
-          {snap.colors.map((color) => (
+          {/* {snap.colors.map((color) => (
             <div
               key={color}
               className="circle"
               style={{ background: color }}
               onClick={() => (state.selectedColor = color)}></div>
-          ))}
+          ))} */}
+          <SketchPicker 
+            color={snap.color}
+            disableAlpha
+            onChange={(color) => (state.selectedColor = color.hex)}
+          />
         </div>
 
         <div className="decals">
-          <div className="decals--container">
+          <div className="decals--container" style={{ background : snap.selectedColor }}>
             {snap.decals.map((decal) => (
               <div
                 key={decal}

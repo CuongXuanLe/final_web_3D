@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,600;1,900&display=swap');
 @import url('https://rsms.me/inter/inter.css');
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 html {
   font-family: 'Inter', sans-serif;
 }
@@ -29,8 +31,6 @@ body {
 canvas {
   touch-action: none;
 }
-
-/* INTRO */
 
 .container {
   position: absolute;
@@ -72,8 +72,8 @@ section {
 }
 
 .section--container {
-  margin-top: 5vh;
-  margin-left: 5vw;
+  margin-top: 11vh;
+  margin-left: 12vw;
 }
 
 .section--container.hidden {
@@ -90,6 +90,12 @@ section {
   width: 30%;
   line-height: 20vh;
   font-family: 'Nunito Sans', sans-serif;
+}
+
+.text--gradient{
+  background: -webkit-linear-gradient(#000000, #585858);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .support--content {
@@ -123,7 +129,6 @@ button {
   cursor: pointer;
   transition: all 0.4s ease-in-out;
   box-shadow: inset 0 0 0 0.09px black;
-
   text-transform: uppercase;
   display: flex;
   align-items: center;
@@ -135,8 +140,6 @@ button:hover {
   box-shadow: inset 250px 0 0 0 black;
   transform: scale(1.1);
 }
-
-/* CUSTOMIZER */
 
 .customizer {
   display: flex;
@@ -154,14 +157,19 @@ button:hover {
   right: 40px;
 }
 
-/* PICKER */
-
 .color-options {
   position: absolute;
   display: flex;
-  gap: 10px;
+  gap: 30px;
   bottom: 20px;
+  padding: 10px 20px;
   margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .circle {
@@ -177,10 +185,19 @@ button:hover {
   cursor: pointer;
 }
 
-/* DECALS */
 .decals--container {
   display: flex;
-  gap: 20px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  width: 200px;
+  height: 50px;
+  border-radius: 16px;
+  background-color: rgba(0, 0, 0, 0.58);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.2px);
+  -webkit-backdrop-filter: blur(4.2px);
 }
 
 .decals {
@@ -211,4 +228,15 @@ button:hover {
 
 .exit:hover {
   box-shadow: inset -250px 0 0 0 black;
+}
+
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.turn-around {
+  animation: spin 2s linear infinite;
+  color: rgb(18, 18, 18);
 }
