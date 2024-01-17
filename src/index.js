@@ -1,12 +1,10 @@
-import { createRoot } from 'react-dom/client'
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App'
 import './index.css'
-import { App as Canvas } from './Canvas'
-import Overlay from './Overlay'
 
-createRoot(document.getElementById('root')).render(
-  <>
-    <Canvas />
-    <Overlay />
-  </>
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
 )
-
