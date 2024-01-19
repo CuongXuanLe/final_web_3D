@@ -7,6 +7,7 @@ import state from '../store';
 
 const CameraRig = ({ children }) => {
   const group = useRef();
+  console.log('group: ', group)
   const snap = useSnapshot(state);
 
   useFrame((state, delta) => {

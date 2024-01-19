@@ -16,6 +16,8 @@ const Customizer = () => {
     stylishShirt: false,
   });
 
+
+
   const generateTabContent = () => {
     switch (activeEditorTab) {
       case "colorpicker":
@@ -85,7 +87,6 @@ const Customizer = () => {
                     handleClick={() => setActiveEditorTab(tab.name)}
                   />
                 ))}
-
                 {generateTabContent()}
               </div>
             </div>
