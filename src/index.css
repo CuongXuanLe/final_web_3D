@@ -28,7 +28,7 @@ html {
 }
 
 .head-text {
-  @apply xl:text-[10rem] text-[6rem] xl:leading-[11rem] leading-[7rem] font-black text-black;
+  @apply xl:text-[7rem] text-[3rem] xl:leading-[7rem] leading-[3rem] font-black text-black;
 }
 
 .download-btn {
@@ -41,14 +41,6 @@ html {
 
 .filtertabs-container {
   @apply absolute z-10 bottom-5 right-0 left-0 w-full flex justify-center items-center flex-wrap gap-4;
-}
-
-.aipicker-container {
-  @apply absolute left-full ml-3 glassmorphism p-3 w-[195px] h-[220px] rounded-md flex flex-col gap-4;
-}
-
-.aipicker-textarea {
-  @apply w-full bg-transparent text-sm border border-gray-300 p-2 outline-none flex-1;
 }
 
 .filepicker-container {
@@ -89,4 +81,26 @@ input[type="file"] {
 
 .sketch-picker > div:nth-child(3) {
   display: none !important;
+}
+
+button {
+  background-color: #dd5c18;
+  border: none;
+  border-radius: 4px;
+  color: white !important;
+  font-weight: bolder;
+  pointer-events: all;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  box-shadow: inset 0 0 0 0.09px black;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 30px;
+}
+
+button:hover {
+  box-shadow: inset 250px 0 0 0 black;
+  transform: scale(1.1);
 }
