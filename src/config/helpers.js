@@ -1,8 +1,10 @@
 export const reader = (file) =>
-  new Promise((resolve, reject) => {
+new Promise((resolve, reject) => {
+    console.log('file: ', file)
     const fileReader = new FileReader();
     fileReader.onload = () => resolve(fileReader.result);
     fileReader.readAsDataURL(file);
+    console.log('check file: ', fileReader)
   });
 
 export const getContrastingColor = (color) => {
