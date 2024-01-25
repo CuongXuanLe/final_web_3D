@@ -17,6 +17,8 @@ const Shirt = () => {
     easing.dampC(materials.lambert1.color, snap.color, 0.25, delta)
   );
 
+  console.log('nodes.T_Shirt_male.geometry: ', nodes.T_Shirt_male.geometry)
+
   const stateString = JSON.stringify(snap);
 
   return (
