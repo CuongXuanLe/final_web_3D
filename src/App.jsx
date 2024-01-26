@@ -1,6 +1,7 @@
-import Canvas from './canvas';
-import Customizer from './pages/Customizer';
-import Home from './pages/Home';
+import Canvas from "./canvas";
+import Customizer from "./pages/Customizer";
+import Home from "./pages/Home";
+import React, { useState } from "react";
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
       <Canvas />
       <Customizer />
     </main>
-  )
+  );
 }
 
-export default App
+export default App;
