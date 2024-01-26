@@ -1,9 +1,9 @@
-import React, {useRef} from "react";
+import React, { useRef } from "react";
 import { easing } from "maath";
 import { useSnapshot } from "valtio";
 import { useFrame } from "@react-three/fiber";
-import { Decal, useGLTF, useTexture } from "@react-three/drei";
-import { MathUtils } from 'three';
+import { useGLTF } from "@react-three/drei";
+
 import state from "../store";
 
 const Car = () => {
@@ -11,13 +11,18 @@ const Car = () => {
   const { nodes, materials } = useGLTF("/Car.glb");
   const objectRef = useRef();
   useFrame((state, delta) =>
-    easing.dampC(materials["body_color_supra.001"].color, snap.color, 0.25, delta)
+    easing.dampC(
+      materials["body_color_supra.001"].color,
+      snap.color,
+      0.25,
+      delta
+    )
   );
   useFrame(() => {
     if (objectRef.current) {
-      objectRef.current.rotation.y += 0.01; 
+      objectRef.current.rotation.y += 0.01;
     }
-  })
+  });
 
   const stateString = JSON.stringify(snap);
 
@@ -27,7 +32,12 @@ const Car = () => {
   const positionZ = 0;
 
   return (
-    <group  key={stateString} scale={[scaleValue, scaleValue, scaleValue]} rotation={[0, 2, 0.2]} position={[positionX, positionY, positionZ]}>
+    <group
+      key={stateString}
+      scale={[scaleValue, scaleValue, scaleValue]}
+      rotation={[0, 2, 0.2]}
+      position={[positionX, positionY, positionZ]}
+    >
       <group position={[0.421, 0.322, 0.333]} rotation={[0.698, 0.08, 0.1]}>
         <mesh
           castShadow

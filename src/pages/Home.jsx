@@ -27,8 +27,46 @@ const Home = () => {
           <motion.div className="home-content" {...headContainerAnimation}>
             <motion.div {...headTextAnimation}>
               <h1 className="head-text w-28">
-                DESIGN <br className="xl:block hidden" /> YOUR SHIRT
+                DESIGN <br className="xl:block hidden" /> 3D OBJECT
               </h1>
+            </motion.div>
+            <motion.div {...headContentAnimation} className="flex gap-5">
+              <CustomButton
+                type="filled"
+                title="Shirt"
+                handleClick={() => (state.intro = false)}
+                customStyles="w-fit px-4 py-2.5 font-bold text-sm"
+              />
+              <CustomButton
+                type="filled"
+                title="Car"
+                handleClick={() => (state.intro = false)}
+                customStyles="w-fit px-4 py-2.5 font-bold text-sm"
+              />
+              <CustomButton
+                type="filled"
+                title="Chair"
+                handleClick={() => (state.intro = false)}
+                customStyles="w-fit px-4 py-2.5 font-bold text-sm"
+              />
+              <CustomButton
+                type="filled"
+                title="Lamp"
+                handleClick={() => (state.intro = false)}
+                customStyles="w-fit px-4 py-2.5 font-bold text-sm"
+              />
+              <CustomButton
+                type="filled"
+                title="Keys"
+                handleClick={() => (state.intro = false)}
+                customStyles="w-fit px-4 py-2.5 font-bold text-sm"
+              />
+              <CustomButton
+                type="filled"
+                title="WaterBottle"
+                handleClick={() => (state.intro = false)}
+                customStyles="w-fit px-4 py-2.5 font-bold text-sm"
+              />
             </motion.div>
             <motion.div {...headContentAnimation} className="flex gap-5">
               <CustomButton

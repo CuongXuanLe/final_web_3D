@@ -1,6 +1,5 @@
 import { Canvas } from "@react-three/fiber";
 import { Environment, Center } from "@react-three/drei";
-import { OrbitControls } from '@react-three/drei';
 
 import Shirt from "./Shirt";
 import Backdrop from "./Backdrop";
@@ -9,6 +8,7 @@ import WaterBottle from "./Waterbottle";
 import Car from "./Car";
 import Bass from "./Bass";
 import Lamp from "./Lamp";
+import Chair from "./Chair";
 
 const CanvasModel = () => {
   return (
@@ -22,12 +22,16 @@ const CanvasModel = () => {
       <Environment preset="city" />
 
       <CameraRig>
-        <Backdrop />
+        {/* <Backdrop /> */}
         <Center>
+          <Shirt />
+          {/* <Car />
           <Lamp />
+          <WaterBottle />
+          <Bass />
+          <Chair /> */}
         </Center>
       </CameraRig>
-      {/* <OrbitControls /> */}
     </Canvas>
   );
 };
