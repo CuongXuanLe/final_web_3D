@@ -49,7 +49,7 @@ const Home = ({ setObject }) => {
               />
               <CustomButton
                 type="filled"
-                title="Chair"
+                title="Gun"
                 handleClick={() =>{
                   setObject('chair');
                 }}
