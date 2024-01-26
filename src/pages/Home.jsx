@@ -9,7 +9,7 @@ import {
   slideAnimation,
 } from "../config/motion";
 
-const Home = () => {
+const Home = ({ setObject }) => {
   const snap = useSnapshot(state);
 
   return (
@@ -34,37 +34,49 @@ const Home = () => {
               <CustomButton
                 type="filled"
                 title="Shirt"
-                handleClick={() => (state.intro = false)}
+                handleClick={() => {
+                  setObject('Shirt');
+                }}
                 customStyles="w-fit px-4 py-2.5 font-bold text-sm"
               />
               <CustomButton
                 type="filled"
                 title="Car"
-                handleClick={() => (state.intro = false)}
+                handleClick={() =>{
+                  setObject('Car');
+                }}
                 customStyles="w-fit px-4 py-2.5 font-bold text-sm"
               />
               <CustomButton
                 type="filled"
                 title="Chair"
-                handleClick={() => (state.intro = false)}
+                handleClick={() =>{
+                  setObject('chair');
+                }}
                 customStyles="w-fit px-4 py-2.5 font-bold text-sm"
               />
               <CustomButton
                 type="filled"
                 title="Lamp"
-                handleClick={() => (state.intro = false)}
+                handleClick={() =>{
+                  setObject('Lamp');
+                }}
                 customStyles="w-fit px-4 py-2.5 font-bold text-sm"
               />
               <CustomButton
                 type="filled"
                 title="Keys"
-                handleClick={() => (state.intro = false)}
+                handleClick={() =>{
+                  setObject('bass');
+                }}
                 customStyles="w-fit px-4 py-2.5 font-bold text-sm"
               />
               <CustomButton
                 type="filled"
                 title="WaterBottle"
-                handleClick={() => (state.intro = false)}
+                handleClick={() =>{
+                  setObject('WaterBottle');
+                }}
                 customStyles="w-fit px-4 py-2.5 font-bold text-sm"
               />
             </motion.div>

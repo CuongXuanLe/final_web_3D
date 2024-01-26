@@ -2,7 +2,6 @@ import { Canvas } from "@react-three/fiber";
 import { Environment, Center } from "@react-three/drei";
 
 import Shirt from "./Shirt";
-import Backdrop from "./Backdrop";
 import CameraRig from "./CameraRig";
 import WaterBottle from "./Waterbottle";
 import Car from "./Car";
@@ -10,7 +9,25 @@ import Bass from "./Bass";
 import Lamp from "./Lamp";
 import Chair from "./Chair";
 
-const CanvasModel = () => {
+const CanvasModel = ({ props }) => {
+  const renderObject = () => {
+    switch (props.toLowerCase()) {
+      case 'shirt':
+        return <Shirt />;
+      case 'car':
+        return <Car />;
+      case 'lamp':
+        return <Lamp />;
+      case 'waterbottle':
+        return <WaterBottle />;
+      case 'bass':
+        return <Bass />;
+      case 'chair':
+        return <Chair />;
+      default:
+        return null;
+    }
+  };
   return (
     <Canvas
       shadows
@@ -20,16 +37,9 @@ const CanvasModel = () => {
     >
       <ambientLight intensity={0.5} />
       <Environment preset="city" />
-
       <CameraRig>
-        {/* <Backdrop /> */}
         <Center>
-          <Shirt />
-          {/* <Car />
-          <Lamp />
-          <WaterBottle />
-          <Bass />
-          <Chair /> */}
+          {renderObject()}
         </Center>
       </CameraRig>
     </Canvas>
